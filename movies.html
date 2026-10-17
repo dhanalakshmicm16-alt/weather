@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Search App</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="topbar">
+      <a class="back" href="index.html">&larr; Home</a>
+      <h1>🎬 Movie Search</h1>
+      <a class="back" href="weather.html">Weather &rarr;</a>
+    </div>
+
+    <!-- Shown only when no OMDb API key is configured -->
+    <section id="key-box" class="message hidden">
+      <strong>OMDb API key needed.</strong>
+      Get a free key at
+      <a href="https://www.omdbapi.com/apikey.aspx" target="_blank" rel="noopener">omdbapi.com</a>,
+      then paste it below (saved only in this browser) or set it in <code>js/config.js</code>.
+      <form id="key-form" class="key-form">
+        <input type="text" id="key-input" placeholder="Your OMDb API key" aria-label="OMDb API key" required />
+        <button type="submit">Save key</button>
+      </form>
+    </section>
+
+    <form id="search-form" class="search-form" autocomplete="off">
+      <input type="search" id="movie-input" placeholder="Search movies, e.g. Inception" aria-label="Movie title" required />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+
+    <section id="status" aria-live="polite">
+      <div class="message info">Type a movie title to start searching.</div>
+    </section>
+
+    <section id="movie-grid" class="movie-grid"></section>
+    <div id="load-more" class="load-more hidden">
+      <button type="button" class="secondary" id="load-more-btn">Load more</button>
+    </div>
+  </main>
+
+  <div id="modal-root"></div>
+
+  <script type="module" src="js/movies.js"></script>
+</body>
+</html>
